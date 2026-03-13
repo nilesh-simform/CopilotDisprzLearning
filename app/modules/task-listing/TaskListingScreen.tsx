@@ -13,6 +13,7 @@ import { useTaskListing } from './useTaskListing';
  * TaskListingScreen component displays a list of tasks.
  * Uses FlatList for optimal performance and TaskItem component for rendering individual tasks.
  * @param {TaskListingProps} props - The props for the TaskListing component.
+ * @param {(task: Task) => void} [props.onTaskPress] - Optional callback function invoked when a task is pressed.
  * @returns {React.ReactElement} A React element displaying the task list.
  */
 const TaskListingScreen: FC<TaskListingProps> = ({ onTaskPress }): React.ReactElement => {

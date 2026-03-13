@@ -24,8 +24,24 @@ const getDimensions = (): DimensionsType => {
   return { width, height };
 };
 
+/**
+ * Get the width and height of the device screen including the status bar and navigation bar.
+ * @returns {DimensionsType} - the width and height of the device screen.
+ */
+const getScreenDimensions = (): DimensionsType => {
+  let { width, height }: ScaledSize = Dimensions.get('screen');
+
+  if (width > height) {
+    [width, height] = [height, width];
+  }
+  return { width, height };
+};
+
 // Get dimensions
 const { width, height }: DimensionsType = getDimensions();
+
+// Get screen dimensions including status bar and navigation bar
+const { width: screenWidth, height: screenHeight }: DimensionsType = getScreenDimensions();
 
 //Guideline sizes are based on standard ~5" screen mobile device
 const guidelineBaseWidth: number = 375;
@@ -79,4 +95,4 @@ const globalMetrics: GlobalMetricsType = {
   isWeb: Platform.OS === 'web'
 };
 
-export { globalMetrics, scale, width, height };
+export { globalMetrics, scale, width, height, screenWidth, screenHeight };

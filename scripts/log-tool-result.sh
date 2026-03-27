@@ -9,8 +9,8 @@ LOG_DIR="$ROOT_DIR/logs"
 # Ensure logs directory exists.
 mkdir -p "$LOG_DIR"
 
-# Read tool result payload from stdin.
-PAYLOAD="$(cat || true)"
+# Read tool result payload with a timeout so the script doesn't hang when stdin is empty.
+PAYLOAD="$(timeout 2 cat 2>/dev/null || true)"
 
 # Append tool result payload to JSONL log.
 if [[ -n "$PAYLOAD" ]]; then

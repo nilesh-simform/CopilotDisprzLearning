@@ -9,8 +9,8 @@ LOG_DIR="$ROOT_DIR/logs"
 # Ensure logs directory exists.
 mkdir -p "$LOG_DIR"
 
-# Read hook stdin payload; keep empty value if nothing is piped.
-PAYLOAD="$(cat || true)"
+# Read hook stdin payload with a timeout so the script doesn't hang when stdin is empty.
+PAYLOAD="$(timeout 2 cat 2>/dev/null || true)"
 # Capture current UTC timestamp for the log entry.
 TIMESTAMP="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 

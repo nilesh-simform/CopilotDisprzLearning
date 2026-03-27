@@ -4,7 +4,7 @@
       {
         "type": "command",
         "command": "./scripts/session-start.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/session-start.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/session-start.ps1",
         "cwd": ".",
         "timeout": 10
       }
@@ -13,7 +13,7 @@
       {
         "type": "command",
         "command": "./scripts/log-prompt.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/log-prompt.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/log-prompt.ps1",
         "cwd": ".",
         "env": {
           "LOG_LEVEL": "INFO"
@@ -24,14 +24,14 @@
       {
         "type": "command",
         "command": "./scripts/security-check.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/security-check.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/security-check.ps1",
         "cwd": ".",
         "timeout": 15
       },
       {
         "type": "command",
         "command": "./scripts/log-tool-use.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/log-tool-use.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/log-tool-use.ps1",
         "cwd": "."
       }
     ],
@@ -39,7 +39,7 @@
       {
         "type": "command",
         "command": "./scripts/log-tool-result.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/log-tool-result.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/log-tool-result.ps1",
         "cwd": "."
       }
     ],
@@ -47,7 +47,7 @@
       {
         "type": "command",
         "command": "./scripts/cleanup.sh",
-        "windows": "powershell -ExecutionPolicy Bypass -File ./scripts/cleanup.ps1",
+        "windows": "powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./scripts/cleanup.ps1",
         "cwd": ".",
         "timeout": 60
       }

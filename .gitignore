@@ -80,6 +80,10 @@ ios/tmp.xcconfig
 # testing
 /coverage
  
+# Copilot hook logs
+logs/*.log
+logs/*.jsonl
+
 # Yarn
 .yarn/*
 !.yarn/patches
